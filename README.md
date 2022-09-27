@@ -32,3 +32,11 @@ Name    Os
 myVMname   UbuntuServer
 
 ```
+3. The tsv format returns tab-separated and newline-separated values without extra formatting, keys, or other symbols.
+    - The TSV format is useful for concise output and scripting purposes.
+    - The TSV will strip double quotes that the JSON format preserves.
+    - To specify the format you want for TSV, use the --query parameter.
+```
+export vm_ids=$(az vm list --show-details --resource-group myResourceGroup --query "[?powerState=='VM running'].id" --output tsv)
+az vm stop --ids $vm_ids
+```
