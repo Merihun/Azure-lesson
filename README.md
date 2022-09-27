@@ -44,10 +44,10 @@ az vm stop --ids $vm_ids
 ### Pass values to another command
 If the value will be used more than once, assign it to a variable. Variables allow you to use values more than once or to create more general scripts. This example assigns an ID found by the az vm list command to a variable.
 ```
-\# assign the list of running VMs to a variable
+# assign the list of running VMs to a variable
 running_vm_ids=$(az vm list --resource-group MyResourceGroup --show-details \
     --query "[?powerState=='VM running'].id" --output tsv)
 
-\# verify the value of the variable
+# verify the value of the variable
 echo $running_vm_ids
 ```
