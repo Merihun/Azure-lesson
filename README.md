@@ -23,12 +23,12 @@ Three common output formats are used with Azure CLI commands:
     az config set core.output=table.
     ```
 2. The table format presents output as a readable table. 
-    ```
-    # command
+```
 az vm show --resource-group myResourceGroup --name myVMname --query "{name: name, os:storageProfile.imageReference.offer}" --output table
 
-# output
+output
 Name    Os
 ------  ------------
 myVMname   UbuntuServer
+
 ```
