@@ -51,3 +51,7 @@ running_vm_ids=$(az vm list --resource-group MyResourceGroup --show-details \
 # verify the value of the variable
 echo $running_vm_ids
 ```
+If the value is used only once, consider piping.
+```
+az vm list --query "[?powerState=='VM running'].name" --output tsv | grep my_vm
+```
